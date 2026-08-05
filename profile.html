@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | Quacks Community</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -13,22 +16,113 @@
 <body>
 
 
-<div class="box">
+<header>
 
-<h2>👤 Profile</h2>
+<h1>🦆 Quacks Community</h1>
 
-<h3>Username</h3>
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="profile.html">Profile</a>
+
+</nav>
+
+</header>
+
+
+
+
+<section class="profile-page">
+
+
+<div class="profile-card">
+
+
+<div class="avatar-area">
+
+
+<img 
+id="avatar"
+src="https://via.placeholder.com/150"
+alt="Avatar">
+
+
+
+<label for="upload">
+
+📷 Upload Image
+
+</label>
+
+
+<input 
+id="upload"
+type="file"
+accept="image/*"
+hidden>
+
+
+</div>
+
+
+
+
+<h2>
+Mohammed
+</h2>
+
+
+<div class="rank">
+
+👑 Owner
+
+</div>
+
+
+
+
+<div class="info">
+
 
 <p>
-Rank: Member
+🎮 Favorite Game:
+Minecraft
 </p>
 
+
 <p>
-Joined: 2026
+📅 Joined:
+2026
+</p>
+
+
+<p>
+⭐ Status:
+Active
 </p>
 
 
 </div>
+
+
+
+<button class="edit-button">
+
+Edit Profile
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<script src="js/profile.js"></script>
 
 
 </body>
