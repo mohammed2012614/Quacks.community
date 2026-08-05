@@ -1,116 +1,192 @@
-body{
+.auth-page{
 
-margin:0;
-font-family:Arial;
-background:#111;
-color:white;
-}
+min-height:100vh;
 
-
-header{
-
-padding:20px;
-background:#181818;
 display:flex;
-justify-content:space-between;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#111,
+#1b1b1b
+);
 
 }
 
 
-nav a{
 
-color:white;
-text-decoration:none;
+.auth-box{
+
+background:#181818;
+
+width:360px;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 30px rgba(0,0,0,.5);
+
+}
+
+
+
+.logo{
+
+font-size:55px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.auth-box h1{
+
 margin:10px;
 
 }
 
 
-.hero{
 
-text-align:center;
-padding:80px 20px;
+.subtitle{
+
+color:#aaa;
 
 }
 
 
-.button{
 
-display:inline-block;
+.input-box{
 
-background:#f5c542;
+position:relative;
 
-color:black;
+margin:25px 0;
 
-padding:12px 25px;
+}
+
+
+
+.input-box input{
+
+width:100%;
+
+padding:14px;
+
+background:#222;
+
+border:none;
+
+outline:none;
+
+color:white;
 
 border-radius:10px;
 
-text-decoration:none;
+}
+
+
+
+.input-box label{
+
+position:absolute;
+
+left:15px;
+
+top:14px;
+
+color:#888;
+
+pointer-events:none;
+
+transition:.3s;
+
+}
+
+
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+
+top:-12px;
+
+font-size:12px;
+
+color:#f5c542;
+
+}
+
+
+
+.auth-button{
+
+width:100%;
+
+padding:14px;
+
+background:#f5c542;
 
 border:none;
+
+border-radius:10px;
+
+font-size:16px;
 
 cursor:pointer;
 
 }
 
 
-.games{
 
-text-align:center;
-padding:40px;
+.line{
 
-}
+margin:25px 0;
 
-
-.cards{
-
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+color:#777;
 
 }
 
 
-.card,.box{
 
-background:#222;
-padding:25px;
-border-radius:15px;
+.discord-button{
 
-}
+width:100%;
 
+padding:14px;
 
-.card{
+background:#5865F2;
 
-width:220px;
+color:white;
 
-}
+border:none;
 
+border-radius:10px;
 
-.box{
-
-width:300px;
-margin:80px auto;
-text-align:center;
+cursor:pointer;
 
 }
 
 
-input{
 
-display:block;
-width:90%;
-padding:10px;
-margin:10px auto;
+.bottom-text{
+
+margin-top:25px;
+
+color:#aaa;
 
 }
 
 
-.staff,footer{
+.bottom-text a{
 
-text-align:center;
-padding:30px;
+color:#f5c542;
+
+text-decoration:none;
 
 }
