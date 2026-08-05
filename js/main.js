@@ -1,8 +1,17 @@
-console.log("🦆 Quacks Community Ready!");
-
 function copyText(text){
 
-    navigator.clipboard.writeText(text);
+    const temp = document.createElement("input");
+
+    temp.value = text;
+
+    document.body.appendChild(temp);
+
+    temp.select();
+
+    document.execCommand("copy");
+
+    document.body.removeChild(temp);
+
 
     alert("Copied: " + text);
 
