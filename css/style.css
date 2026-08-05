@@ -449,3 +449,112 @@ padding:30px;
 
 
 }
+
+/* Profile */
+
+
+.profile-page {
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.profile-card {
+
+    background:#181818;
+
+    width:350px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+}
+
+
+
+.avatar-area img {
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #00e5ff;
+
+}
+
+
+
+.avatar-area label {
+
+    display:block;
+
+    margin-top:15px;
+
+    cursor:pointer;
+
+    color:#00e5ff;
+
+}
+
+
+
+.rank {
+
+    margin:15px;
+
+    padding:10px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+    90deg,
+    #ff4da6,
+    #6b2cff
+    );
+
+}
+
+
+
+.info {
+
+    text-align:left;
+
+    color:#ddd;
+
+}
+
+
+
+.edit-button {
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#00e5ff;
+
+    cursor:pointer;
+
+}
