@@ -1,18 +1,30 @@
 function copyText(text){
 
-    const temp = document.createElement("input");
+    if(navigator.clipboard){
 
-    temp.value = text;
+        navigator.clipboard.writeText(text)
+        .then(function(){
 
-    document.body.appendChild(temp);
+            alert("Copied: " + text);
 
-    temp.select();
+        });
 
-    document.execCommand("copy");
+    } else {
 
-    document.body.removeChild(temp);
+        let input = document.createElement("input");
 
+        input.value = text;
 
-    alert("Copied: " + text);
+        document.body.appendChild(input);
+
+        input.select();
+
+        document.execCommand("copy");
+
+        input.remove();
+
+        alert("Copied: " + text);
+
+    }
 
 }
