@@ -19,11 +19,11 @@
 <div class="login-container">
 
 
-    <!-- Welcome Side -->
-
     <div class="welcome-panel">
 
+
         <div class="welcome-content">
+
 
             <div class="logo">
                 🦆
@@ -43,14 +43,15 @@
                 join the gaming community.
             </p>
 
+
         </div>
+
 
     </div>
 
 
 
 
-    <!-- Register Form -->
 
     <div class="form-panel">
 
@@ -64,11 +65,13 @@
 
 
 
+
             <div class="input-group">
 
                 <span>👤</span>
 
-                <input 
+                <input
+                id="username"
                 type="text"
                 placeholder="Username"
                 required>
@@ -82,7 +85,8 @@
 
                 <span>📧</span>
 
-                <input 
+                <input
+                id="email"
                 type="email"
                 placeholder="Email"
                 required>
@@ -96,7 +100,8 @@
 
                 <span>🔒</span>
 
-                <input 
+                <input
+                id="password"
                 type="password"
                 placeholder="Password"
                 required>
@@ -106,11 +111,17 @@
 
 
 
-            <button class="login-button">
+
+            <button
+            type="button"
+            class="login-button"
+            onclick="registerUser()">
 
                 REGISTER
 
             </button>
+
+
 
 
 
@@ -119,7 +130,9 @@
                 Already have an account?
 
                 <a href="login.html" style="color:#6b2cff;">
+
                     Login
+
                 </a>
 
             </p>
@@ -133,6 +146,11 @@
 
 
 </div>
+
+
+
+
+<script src="js/auth.js"></script>
 
 
 </body>
