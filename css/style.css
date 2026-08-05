@@ -558,3 +558,64 @@ padding:30px;
     cursor:pointer;
 
 }
+
+/* Admin Panel */
+
+
+.admin-page {
+
+    padding:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.admin-card {
+
+    background:#181818;
+
+    width:320px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+
+
+.member {
+
+    background:#222;
+
+    padding:15px;
+
+    margin:15px 0;
+
+    border-radius:15px;
+
+}
+
+
+
+.admin-card button {
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#00e5ff;
+
+    cursor:pointer;
+
+}
