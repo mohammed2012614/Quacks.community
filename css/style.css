@@ -457,3 +457,131 @@ footer {
 
 
 }
+
+/* =========================
+   Home Page Fix
+========================= */
+
+
+body:not(.login-page) {
+
+    background: #111;
+
+}
+
+
+
+body:not(.login-page) header {
+
+    background: #181818;
+
+    padding: 20px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+body:not(.login-page) nav a {
+
+    color: white;
+
+    margin: 0 10px;
+
+    transition: .3s;
+
+}
+
+
+
+body:not(.login-page) nav a:hover {
+
+    color: #00e5ff;
+
+}
+
+
+
+body:not(.login-page) .hero {
+
+    min-height: 450px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #21005d,
+        #0057ff,
+        #00e5ff
+    );
+
+}
+
+
+
+body:not(.login-page) .hero h2 {
+
+    font-size: 45px;
+
+}
+
+
+
+body:not(.login-page) .hero p {
+
+    max-width: 600px;
+
+    font-size: 20px;
+
+    text-align: center;
+
+}
+
+
+
+body:not(.login-page) .button {
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #ff4da6,
+        #6b2cff
+    );
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+
+
+body:not(.login-page) .card {
+
+    transition: .3s;
+
+}
+
+
+
+body:not(.login-page) .card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:0 10px 25px rgba(0,229,255,.3);
+
+}
