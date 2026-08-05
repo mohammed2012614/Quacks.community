@@ -1,183 +1,137 @@
-* {
-    box-sizing: border-box;
+body{
+
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
 }
 
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
-}
+header{
 
-
-/* =====================
-      HOME PAGE
-===================== */
-
-
-header {
-
-    padding: 20px 40px;
-    background: #181818;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+padding:20px;
+background:#181818;
+display:flex;
+justify-content:space-between;
 
 }
 
 
-nav a {
+nav a{
 
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-
-}
-
-
-nav a:hover {
-
-    color: #00e5ff;
+color:white;
+text-decoration:none;
+margin:10px;
 
 }
 
 
+.hero{
 
-.hero {
-
-    text-align: center;
-    padding: 80px 20px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #21005d,
-        #0057ff,
-        #00e5ff
-    );
+text-align:center;
+padding:80px 20px;
 
 }
 
 
+.button{
 
-.hero h2 {
+display:inline-block;
 
-    font-size: 45px;
+background:#f5c542;
 
-}
+color:black;
 
+padding:12px 25px;
 
+border-radius:10px;
 
-.hero p {
+text-decoration:none;
 
-    font-size: 20px;
+border:none;
 
-}
-
-
-
-.button {
-
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    margin-top: 20px;
-
-    border-radius: 50px;
-
-    text-decoration: none;
-
-    color: white;
-
-    background:
-    linear-gradient(
-        90deg,
-        #ff4da6,
-        #6b2cff
-    );
+cursor:pointer;
 
 }
 
 
+.games{
 
-.games {
-
-    text-align: center;
-
-    padding: 50px 20px;
+text-align:center;
+padding:40px;
 
 }
 
 
+.cards{
 
-.cards {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 
 }
 
 
+.card,.box{
 
-.card {
-
-    background: #222;
-
-    padding: 25px;
-
-    width: 230px;
-
-    border-radius: 20px;
+background:#222;
+padding:25px;
+border-radius:15px;
 
 }
 
 
+.card{
 
-.card:hover {
-
-    transform: translateY(-8px);
-
-}
-
-
-
-.staff,
-footer {
-
-    text-align: center;
-
-    padding: 30px;
+width:220px;
 
 }
 
 
+.box{
+
+width:300px;
+margin:80px auto;
+text-align:center;
+
+}
 
 
+input{
 
-/* =====================
-      LOGIN PAGE
-===================== */
+display:block;
+width:90%;
+padding:10px;
+margin:10px auto;
+
+}
+
+
+.staff,footer{
+
+text-align:center;
+padding:30px;
+
+}
+
+/* =========================
+   Quacks Login Design
+========================= */
 
 
 .login-page {
 
     min-height: 100vh;
+    margin: 0;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     background: #6b2cff;
+
+    font-family: Arial, sans-serif;
 
 }
 
@@ -186,7 +140,6 @@ footer {
 .login-container {
 
     width: 90%;
-
     max-width: 1100px;
 
     min-height: 650px;
@@ -197,15 +150,22 @@ footer {
 
     border-radius: 25px;
 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
 }
 
 
 
+/* Left Side */
 
 
 .welcome-panel {
 
     width: 50%;
+
+    position: relative;
+
+    overflow: hidden;
 
     background:
 
@@ -216,11 +176,11 @@ footer {
         #00e5ff
     );
 
+    color: white;
+
     display: flex;
 
     align-items: center;
-
-    color: white;
 
 }
 
@@ -230,6 +190,10 @@ footer {
 
     padding: 50px;
 
+    position: relative;
+
+    z-index: 2;
+
 }
 
 
@@ -237,6 +201,8 @@ footer {
 .logo {
 
     font-size: 80px;
+
+    margin-bottom: 20px;
 
 }
 
@@ -246,21 +212,88 @@ footer {
 
     font-size: 42px;
 
+    line-height: 1.2;
+
 }
 
 
 
+.welcome-content p {
+
+    font-size: 18px;
+
+    opacity: .9;
+
+}
+
+
+
+/* Dynamic shapes */
+
+
+.shapes::before,
+.shapes::after {
+
+    content:"";
+
+    position:absolute;
+
+    border-radius:50px;
+
+    transform: rotate(-35deg);
+
+}
+
+
+
+.shapes::before {
+
+    width:300px;
+
+    height:80px;
+
+    background:rgba(255,255,255,.15);
+
+    top:80px;
+
+    right:-100px;
+
+}
+
+
+
+.shapes::after {
+
+    width:250px;
+
+    height:70px;
+
+    background:rgba(255,255,255,.1);
+
+    bottom:100px;
+
+    left:-100px;
+
+}
+
+
+
+
+
+/* Right Side */
+
+
 .form-panel {
 
-    width: 50%;
+    width:50%;
 
-    background: white;
+    background:white;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
 }
 
@@ -268,9 +301,9 @@ footer {
 
 .login-form {
 
-    width: 70%;
+    width:70%;
 
-    text-align: center;
+    text-align:center;
 
 }
 
@@ -278,25 +311,38 @@ footer {
 
 .login-form h2 {
 
-    color: #35106f;
+    color:#35106f;
+
+    font-size:32px;
+
+    margin-bottom:40px;
 
 }
 
 
 
+
 .input-group {
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    background: #f1edff;
+    background:#f1edff;
 
-    padding: 15px 20px;
+    border-radius:50px;
 
-    border-radius: 50px;
+    padding:15px 20px;
 
-    margin: 20px 0;
+    margin:20px 0;
+
+}
+
+
+
+.input-group span {
+
+    margin-right:10px;
 
 }
 
@@ -304,25 +350,30 @@ footer {
 
 .input-group input {
 
-    border: none;
+    border:none;
 
-    outline: none;
+    outline:none;
 
-    background: transparent;
+    background:transparent;
 
-    width: 100%;
+    width:100%;
+
+    font-size:16px;
 
 }
 
 
 
+
 .options {
 
-    display: flex;
+    display:flex;
 
-    justify-content: space-between;
+    justify-content:space-between;
 
-    color: #555;
+    font-size:14px;
+
+    margin:20px 0;
 
 }
 
@@ -330,25 +381,31 @@ footer {
 
 .options a {
 
-    color: #6b2cff;
+    color:#6b2cff;
+
+    text-decoration:none;
 
 }
 
 
 
+
 .login-button {
 
-    width: 100%;
+    width:100%;
 
-    padding: 15px;
+    padding:15px;
 
-    border: none;
+    border:none;
 
-    border-radius: 50px;
+    border-radius:50px;
 
-    color: white;
+    color:white;
 
-    font-size: 18px;
+    font-size:18px;
+
+    cursor:pointer;
+
 
     background:
 
@@ -363,21 +420,30 @@ footer {
 
 
 
+/* Mobile */
+
 
 @media(max-width:800px){
 
 
-.login-container {
+.login-container{
 
-    flex-direction: column;
+    flex-direction:column;
 
 }
 
 
 .welcome-panel,
-.form-panel {
+.form-panel{
 
     width:100%;
+
+}
+
+
+.welcome-content h1{
+
+    font-size:32px;
 
 }
 
