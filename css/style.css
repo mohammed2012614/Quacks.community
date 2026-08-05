@@ -853,3 +853,182 @@ button,
     color:white;
 
 }
+
+:root{
+  --purple-dark:#21005d;
+  --electric-blue:#0057ff;
+  --cyan:#00e5ff;
+  --accent:#6b2cff;
+  --bg-gradient: linear-gradient(135deg,var(--purple-dark),var(--electric-blue),var(--cyan));
+  --btn-gradient: linear-gradient(90deg,var(--accent),var(--electric-blue),var(--cyan));
+  --card-bg: rgba(255,255,255,0.95);
+  --radius: 25px;
+  --shadow: 0 15px 40px rgba(0,0,0,.25);
+  --space-lg: 3.75rem; /* 60px */
+  --space-md: 1.25rem; /* 20px */
+  --space-sm: .75rem;  /* 12px */
+  --text-color:#35106f;
+  --muted:#333;
+  --max-card-width:420px;
+  --transition: 200ms cubic-bezier(.16,.84,.33,1);
+  --focus-ring: 3px solid rgba(0,123,255,.18);
+  box-sizing: border-box;
+}
+
+/* Global box-sizing */
+*,*::before,*::after{box-sizing:inherit}
+
+/* Section: maintains the same identity but is more responsive */
+.server-info{
+  padding: clamp(2rem, 4vw, var(--space-lg)) var(--space-md);
+  text-align:center;
+  background:var(--bg-gradient);
+  background-size: 200% 200%;
+  color: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  /* keep layout intact while improving vertical centering on tall viewports */
+  display:block;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  padding-top: calc(var(--space-lg) + 1rem);
+  padding-bottom: calc(var(--space-lg) + 1rem);
+}
+
+/* Heading: responsive sizing without changing position */
+.server-info h2{
+  color: #fff;
+  font-size: clamp(1.5rem, 1.1rem + 2vw, 2.2rem); /* responsive */
+  margin: 0 0 1.5rem 0;
+  line-height:1.05;
+  font-weight:700;
+  text-shadow: 0 4px 18px rgba(0,0,0,.35);
+}
+
+/* Card: preserve shape & placement but improve responsiveness and accessibility */
+.server-card{
+  background:var(--card-bg);
+  max-width: min(var(--max-card-width), 95%);
+  margin: 1.5rem auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Subhead & text */
+.server-card h3{
+  color:var(--text-color);
+  font-size: clamp(1.05rem, .9rem + 1vw, 1.5rem);
+  margin: 0 0 .5rem 0;
+  font-weight:700;
+}
+
+.server-card p{
+  color:var(--muted);
+  font-size: clamp(.95rem, .8rem + .5vw, 1.125rem);
+  margin: 0 0 .75rem 0;
+  line-height:1.45;
+}
+
+/* Shared button styles for both <button> and .button link */
+.server-card button,
+.server-card .button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  margin: .5rem .5rem;
+  padding: .65rem 1.6rem;
+  border: none;
+  border-radius: 999px; /* pill */
+  color: #fff;
+  background: var(--btn-gradient);
+  cursor: pointer;
+  text-decoration:none;
+  font-weight:600;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+  box-shadow: 0 8px 18px rgba(107,44,255,.12);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover / active / focus states (accessible) */
+.server-card button:hover,
+.server-card .button:hover{
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(16,24,40,.18);
+  filter: saturate(1.05);
+}
+
+.server-card button:active,
+.server-card .button:active{
+  transform: translateY(0) scale(.995);
+  box-shadow: 0 10px 24px rgba(16,24,40,.12);
+}
+
+/* Visible focus for keyboard users */
+.server-card button:focus-visible,
+.server-card .button:focus-visible{
+  outline: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12), var(--focus-ring);
+  border-radius: 999px;
+}
+
+/* Preserve original .server-card button selector so existing JS still works */
+.server-card button{ /* keeps specificity for any inline styles or scripts */
+  /* nothing extra here, rules above already apply */
+}
+
+/* Small utilities */
+.server-card .button{ /* keep link variant appearance identical to buttons */
+  display:inline-block;
+}
+
+/* Hover transform reduced for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .server-card button,
+  .server-card .button{
+    transition: none;
+  }
+  .server-card button:hover,
+  .server-card .button:hover{
+    transform: none;
+    box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  }
+}
+
+/* Responsive tweaks for narrow screens */
+@media (max-width: 480px){
+  .server-info{
+    padding: 2rem 1rem;
+  }
+  .server-card{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 18px;
+  }
+  .server-card h3{ font-size: 1.05rem; }
+  .server-card p{ font-size: .98rem; }
+  .server-card button,
+  .server-card .button{
+    padding: .55rem 1.1rem;
+    margin: .4rem .3rem;
+    font-size: .95rem;
+  }
+}
+
+/* Subtle floating animation on large screens to make section feel dynamic (non-essential) */
+@media (min-width: 1024px){
+  .server-info{
+    animation: backgroundShift 12s ease-in-out infinite;
+  }
+  @keyframes backgroundShift{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+  }
+}
