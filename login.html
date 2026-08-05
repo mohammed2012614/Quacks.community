@@ -19,8 +19,6 @@
 <div class="login-container">
 
 
-    <!-- Left Welcome Panel -->
-
     <div class="welcome-panel">
 
         <div class="shapes"></div>
@@ -51,8 +49,6 @@
 
 
 
-    <!-- Right Login Form -->
-
     <div class="form-panel">
 
 
@@ -69,7 +65,8 @@
 
                 <span>👤</span>
 
-                <input 
+                <input
+                id="username"
                 type="text"
                 placeholder="Username"
                 required>
@@ -83,7 +80,8 @@
 
                 <span>🔒</span>
 
-                <input 
+                <input
+                id="password"
                 type="password"
                 placeholder="Password"
                 required>
@@ -116,7 +114,10 @@
 
 
 
-            <button class="login-button">
+            <button 
+            type="button"
+            class="login-button"
+            onclick="loginUser()">
 
                 LOGIN
 
@@ -132,6 +133,9 @@
 
 </div>
 
+
+
+<script src="js/auth.js"></script>
 
 
 </body>
