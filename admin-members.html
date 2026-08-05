@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Members | Quacks Admin</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>🦆 Quacks Admin</h1>
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="admin.html">Admin</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+<section class="hero">
+
+
+<h2>👥 Members Management</h2>
+
+
+
+
+<div class="card">
+
+<h3>Mohammed</h3>
+
+<p>
+Rank: 👑 Owner
+</p>
+
+<button onclick="manageUser('Mohammed')">
+
+Manage
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h3>Player</h3>
+
+<p>
+Rank: 👤 Member
+</p>
+
+
+<button onclick="promoteUser('Player')">
+
+Promote
+
+</button>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+<script>
+
+function manageUser(name){
+
+alert("Managing: " + name);
+
+}
+
+
+
+function promoteUser(name){
+
+alert(name + " promoted!");
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
