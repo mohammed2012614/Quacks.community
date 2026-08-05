@@ -1,29 +1,67 @@
-function copyText(text){
+async function copyText(text) {
 
-    if(navigator.clipboard){
+    let success = false;
 
-        navigator.clipboard.writeText(text)
-        .then(function(){
 
-            alert("Copied: " + text);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
 
-        });
+        try {
+
+            await navigator.clipboard.writeText(text);
+
+            success = true;
+
+        } catch (err) {
+
+            success = false;
+
+        }
+
+    }
+
+
+
+    if (!success) {
+
+        const textarea = document.createElement("textarea");
+
+        textarea.value = text;
+
+        textarea.style.position = "fixed";
+
+        textarea.style.left = "-9999px";
+
+
+        document.body.appendChild(textarea);
+
+
+        textarea.select();
+
+
+        try {
+
+            success = document.execCommand("copy");
+
+        } catch (err) {
+
+            success = false;
+
+        }
+
+
+        document.body.removeChild(textarea);
+
+    }
+
+
+
+    if (success) {
+
+        alert("Copied: " + text);
 
     } else {
 
-        let input = document.createElement("input");
-
-        input.value = text;
-
-        document.body.appendChild(input);
-
-        input.select();
-
-        document.execCommand("copy");
-
-        input.remove();
-
-        alert("Copied: " + text);
+        alert("Copy failed");
 
     }
 
