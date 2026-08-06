@@ -1,293 +1,791 @@
-body{
+/* ============================================
+   Quacks Community
+   Professional UI v2
+   ============================================ */
 
-margin:0;
-font-family:Arial;
-background:#111;
-color:white;
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#070b18;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#10182b;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#6b2cff,#00bfff);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8d4cff;
+
+}
+
+/* ==========================
+        Variables
+========================== */
+
+:root{
+
+--background:#070b18;
+
+--background2:#10182b;
+
+--card:#151d33;
+
+--card-hover:#1c2640;
+
+--border:#2b3554;
+
+--purple:#7b3dff;
+
+--blue:#00bfff;
+
+--cyan:#00ffe7;
+
+--white:#ffffff;
+
+--text:#d8e2ff;
+
+--shadow:0 20px 50px rgba(0,0,0,.35);
+
+--radius:18px;
+
+--transition:.35s ease;
+
+}
+
+/* ==========================
+        Background
+========================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+left:-250px;
+
+top:-250px;
+
+background:#6b2cff55;
+
+filter:blur(140px);
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+right:-250px;
+
+bottom:-250px;
+
+width:700px;
+
+height:700px;
+
+background:#00bfff44;
+
+filter:blur(160px);
+
+z-index:-2;
+
+}
+
+/* ==========================
+        Header
+========================== */
 
 header{
 
-padding:20px;
-background:#181818;
+position:sticky;
+
+top:0;
+
+z-index:999;
+
 display:flex;
+
 justify-content:space-between;
 
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(10,15,30,.75);
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
 }
 
+header h1{
 
-nav a{
+font-size:30px;
+
+font-weight:700;
 
 color:white;
-text-decoration:none;
-margin:10px;
 
 }
 
+/* ==========================
+        Navigation
+========================== */
 
-.hero{
-
-text-align:center;
-padding:80px 20px;
-
-}
-
-
-.button{
-
-display:inline-block;
-
-background:#f5c542;
-
-color:black;
-
-padding:12px 25px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-border:none;
-
-cursor:pointer;
-
-}
-
-
-.games{
-
-text-align:center;
-padding:40px;
-
-}
-
-
-.cards{
+nav{
 
 display:flex;
-justify-content:center;
-gap:20px;
+
+gap:18px;
+
 flex-wrap:wrap;
 
 }
 
+nav a{
 
-.card,.box{
+text-decoration:none;
 
-background:#222;
-padding:25px;
-border-radius:15px;
+color:#dfe8ff;
+
+font-weight:500;
+
+padding:10px 18px;
+
+border-radius:50px;
+
+transition:var(--transition);
+
+}
+
+nav a:hover{
+
+background:linear-gradient(90deg,var(--purple),var(--blue));
+
+color:white;
+
+box-shadow:0 10px 30px rgba(0,191,255,.35);
+
+transform:translateY(-2px);
+
+}
+
+nav a.active{
+
+background:linear-gradient(90deg,var(--purple),var(--blue));
+
+}
+
+/* ==========================
+        Hero
+========================== */
+
+.hero{
+
+min-height:80vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+.hero h2{
+
+font-size:65px;
+
+margin-bottom:20px;
+
+font-weight:800;
+
+background:linear-gradient(90deg,#fff,#00bfff,#6b2cff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+color:#cfd9ff;
+
+max-width:750px;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+/* ==========================
+        Buttons
+========================== */
+
+.button,
+button{
+
+background:linear-gradient(90deg,#6b2cff,#00bfff);
+
+border:none;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+color:white;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+text-decoration:none;
+
+transition:var(--transition);
+
+display:inline-block;
+
+}
+
+.button:hover,
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 20px 40px rgba(0,191,255,.4);
+
+}
+
+/* ==========================
+        Section
+========================== */
+
+section{
+
+padding:90px 8%;
+
+}
+
+section h2{
+
+font-size:42px;
+
+margin-bottom:50px;
+
+text-align:center;
+
+}
+
+/* ==========================
+        Cards
+========================== */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+padding:30px;
+
+transition:var(--transition);
+
+box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+background:var(--card-hover);
+
+border-color:var(--blue);
+
+}
+
+.card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+}
+
+.card p{
+
+color:#cfd9ff;
+
+line-height:1.8;
+
+margin-bottom:25px;
+
+}
+
+/* ============================================
+        Minecraft Server Section
+============================================ */
+
+.server-info{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(107,44,255,.15),
+    rgba(0,191,255,.15)
+    );
+
+    border-radius:30px;
+
+    margin:40px auto;
+
+}
+
+
+.server-card{
+
+    max-width:550px;
+
+    margin:30px auto;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.server-card h3{
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+.server-card p{
+
+    color:var(--text);
+
+    font-size:18px;
+
+    margin:12px 0;
+
+}
+
+
+/* Copy Buttons */
+
+.copy-button{
+
+    background:linear-gradient(
+    90deg,
+    #00ffe7,
+    #00bfff
+    );
+
+    color:#001018;
+
+    margin-top:15px;
+
+}
+
+
+/* Status */
+
+.status-online{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#00ff8840;
+
+    color:#00ff88;
+
+    padding:8px 20px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+
+.status-online::before{
+
+    content:"";
+
+    width:12px;
+
+    height:12px;
+
+    background:#00ff88;
+
+    border-radius:50%;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:.5;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+
+/* ============================================
+        Discord Section
+============================================ */
+
+
+.discord-box{
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #5865f2,
+    #6b2cff
+    );
+
+    box-shadow:0 20px 60px #5865f255;
+
+}
+
+
+.discord-box h2{
+
+    color:white;
+
+}
+
+
+.discord-box p{
+
+    font-size:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+.discord-button{
+
+    background:white;
+
+    color:#5865f2;
+
+}
+
+
+.discord-button:hover{
+
+    background:#eee;
+
+}
+
+
+
+/* ============================================
+        News
+============================================ */
+
+
+.news-card{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+}
+
+
+.news-card h3{
+
+    color:#00bfff;
+
+}
+
+
+.news-date{
+
+    color:#8fa3d9;
+
+    font-size:14px;
+
+}
+
+
+/* ============================================
+        Profile
+============================================ */
+
+
+.profile-container{
+
+    max-width:600px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:var(--card);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.profile-image{
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid var(--blue);
+
+}
+
+
+.rank{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:8px 25px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    90deg,
+    var(--purple),
+    var(--blue)
+    );
+
+    font-weight:700;
+
+}
+
+
+/* ============================================
+        Footer
+============================================ */
+
+
+footer{
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#050914;
+
+    color:#9caee0;
+
+    border-top:1px solid var(--border);
+
+}
+
+
+/* ============================================
+        Responsive Mobile
+============================================ */
+
+
+@media(max-width:768px){
+
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+header h1{
+
+    font-size:24px;
+
+}
+
+
+nav{
+
+    justify-content:center;
+
+}
+
+
+.hero h2{
+
+    font-size:40px;
+
+}
+
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+
+section{
+
+    padding:50px 5%;
+
+}
+
+
+section h2{
+
+    font-size:32px;
 
 }
 
 
 .card{
 
-width:220px;
+    padding:25px;
 
 }
 
 
-.box{
+.server-card{
 
-width:300px;
-margin:80px auto;
-text-align:center;
+    padding:25px;
 
 }
 
 
-input{
-
-display:block;
-width:90%;
-padding:10px;
-margin:10px auto;
-
 }
 
+/* ============================================
+        Login & Register
+============================================ */
 
-.staff,footer{
 
-text-align:center;
-padding:30px;
+.login-page{
 
-}
-
-/* =========================
-   Quacks Login Design
-========================= */
-
-
-.login-page {
-
-    min-height: 100vh;
-    margin: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #6b2cff;
-
-    font-family: Arial, sans-serif;
-
-}
-
-
-
-.login-container {
-
-    width: 90%;
-    max-width: 1100px;
-
-    min-height: 650px;
-
-    display: flex;
-
-    overflow: hidden;
-
-    border-radius: 25px;
-
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-
-}
-
-
-
-/* Left Side */
-
-
-.welcome-panel {
-
-    width: 50%;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #21005d,
-        #0057ff,
-        #00e5ff
-    );
-
-    color: white;
-
-    display: flex;
-
-    align-items: center;
-
-}
-
-
-
-.welcome-content {
-
-    padding: 50px;
-
-    position: relative;
-
-    z-index: 2;
-
-}
-
-
-
-.logo {
-
-    font-size: 80px;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-.welcome-content h1 {
-
-    font-size: 42px;
-
-    line-height: 1.2;
-
-}
-
-
-
-.welcome-content p {
-
-    font-size: 18px;
-
-    opacity: .9;
-
-}
-
-
-
-/* Dynamic shapes */
-
-
-.shapes::before,
-.shapes::after {
-
-    content:"";
-
-    position:absolute;
-
-    border-radius:50px;
-
-    transform: rotate(-35deg);
-
-}
-
-
-
-.shapes::before {
-
-    width:300px;
-
-    height:80px;
-
-    background:rgba(255,255,255,.15);
-
-    top:80px;
-
-    right:-100px;
-
-}
-
-
-
-.shapes::after {
-
-    width:250px;
-
-    height:70px;
-
-    background:rgba(255,255,255,.1);
-
-    bottom:100px;
-
-    left:-100px;
-
-}
-
-
-
-
-
-/* Right Side */
-
-
-.form-panel {
-
-    width:50%;
-
-    background:white;
+    min-height:100vh;
 
     display:flex;
 
@@ -295,93 +793,198 @@ padding:30px;
 
     align-items:center;
 
+    padding:30px;
+
 }
 
 
+.login-container{
 
-.login-form {
+    width:100%;
 
-    width:70%;
+    max-width:1100px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* Welcome Side */
+
+.welcome-panel{
+
+    padding:60px 40px;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #6b2cff,
+    #00bfff
+    );
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.welcome-content{
 
     text-align:center;
 
 }
 
 
+.logo{
 
-.login-form h2 {
+    font-size:80px;
 
-    color:#35106f;
+    margin-bottom:20px;
 
-    font-size:32px;
+}
 
-    margin-bottom:40px;
+
+.welcome-content h1{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+.welcome-content p{
+
+    line-height:1.8;
+
+    font-size:18px;
 
 }
 
 
 
+/* Form Side */
 
-.input-group {
+
+.form-panel{
+
+    padding:60px 45px;
 
     display:flex;
 
     align-items:center;
 
-    background:#f1edff;
+}
 
-    border-radius:50px;
+
+.login-form{
+
+    width:100%;
+
+}
+
+
+.login-form h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    font-size:35px;
+
+}
+
+
+
+/* Inputs */
+
+
+.input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#10182b;
+
+    border:1px solid var(--border);
 
     padding:15px 20px;
 
-    margin:20px 0;
+    border-radius:50px;
+
+    margin-bottom:20px;
 
 }
 
 
+.input-group span{
 
-.input-group span {
-
-    margin-right:10px;
+    font-size:22px;
 
 }
 
 
+.input-group input{
 
-.input-group input {
+    width:100%;
+
+    background:none;
 
     border:none;
 
     outline:none;
 
-    background:transparent;
-
-    width:100%;
+    color:white;
 
     font-size:16px;
 
 }
 
 
+.input-group input::placeholder{
+
+    color:#8997ba;
+
+}
 
 
-.options {
+
+/* Options */
+
+
+.options{
 
     display:flex;
 
     justify-content:space-between;
-
-    font-size:14px;
 
     margin:20px 0;
 
 }
 
 
+.options a{
 
-.options a {
-
-    color:#6b2cff;
+    color:#00bfff;
 
     text-decoration:none;
 
@@ -389,38 +992,216 @@ padding:30px;
 
 
 
+/* ============================================
+        Admin Dashboard
+============================================ */
 
-.login-button {
 
-    width:100%;
+.admin-container{
+
+    display:grid;
+
+    grid-template-columns:250px 1fr;
+
+    min-height:80vh;
+
+}
+
+
+.admin-sidebar{
+
+    background:#10182b;
+
+    padding:30px;
+
+    border-right:1px solid var(--border);
+
+}
+
+
+.admin-sidebar a{
+
+    display:block;
 
     padding:15px;
 
-    border:none;
-
-    border-radius:50px;
+    margin-bottom:10px;
 
     color:white;
 
-    font-size:18px;
+    text-decoration:none;
 
-    cursor:pointer;
+    border-radius:15px;
+
+    transition:.3s;
+
+}
 
 
-    background:
+.admin-sidebar a:hover{
 
-    linear-gradient(
-        90deg,
-        #ff4da6,
-        #6b2cff
+    background:linear-gradient(
+    90deg,
+    var(--purple),
+    var(--blue)
     );
 
 }
 
 
+/* Admin Cards */
 
 
-/* Mobile */
+.dashboard-cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+
+.dashboard-card{
+
+    background:var(--card);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    border:1px solid var(--border);
+
+}
+
+
+.dashboard-card h3{
+
+    font-size:35px;
+
+    color:#00bfff;
+
+}
+
+
+
+/* ============================================
+        Tables
+============================================ */
+
+
+.table-box{
+
+    overflow-x:auto;
+
+}
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+th,td{
+
+    padding:18px;
+
+    text-align:left;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+th{
+
+    background:#10182b;
+
+    color:#00bfff;
+
+}
+
+
+tr:hover{
+
+    background:#1c2640;
+
+}
+
+
+
+/* ============================================
+        Animations
+============================================ */
+
+
+.fade-in{
+
+    animation:fade .8s ease;
+
+}
+
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+.glow{
+
+    animation:glow 2s infinite alternate;
+
+}
+
+
+@keyframes glow{
+
+    from{
+
+        box-shadow:0 0 10px #6b2cff;
+
+    }
+
+    to{
+
+        box-shadow:0 0 35px #00bfff;
+
+    }
+
+}
+
+
+
+/* Mobile Login */
 
 
 @media(max-width:800px){
@@ -428,15 +1209,14 @@ padding:30px;
 
 .login-container{
 
-    flex-direction:column;
+    grid-template-columns:1fr;
 
 }
 
 
-.welcome-panel,
-.form-panel{
+.welcome-panel{
 
-    width:100%;
+    padding:40px 20px;
 
 }
 
@@ -448,587 +1228,447 @@ padding:30px;
 }
 
 
-}
+.form-panel{
 
-/* Profile */
-
-
-.profile-page {
-
-    min-height:80vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+    padding:35px 20px;
 
 }
 
 
+.admin-container{
 
-.profile-card {
+    grid-template-columns:1fr;
 
-    background:#181818;
+}
 
-    width:350px;
 
-    padding:40px;
+.admin-sidebar{
 
-    border-radius:25px;
-
-    text-align:center;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    border-right:none;
 
 }
 
 
 
-.avatar-area img {
+}
+
+/* ============================================
+        FINAL UI ENHANCEMENTS
+        Quacks Community
+============================================ */
+
+
+/* Glass UI */
+
+.glass{
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    -webkit-backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+/* Smooth Containers */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+/* Better Buttons */
+
+
+.button,
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+
+
+.button::before,
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.5),
+    transparent
+    );
+
+    transform:
+    translateX(-120%);
+
+    transition:.6s;
+
+    z-index:-1;
+
+}
+
+
+
+.button:hover::before,
+button:hover::before{
+
+    transform:
+    translateX(120%);
+
+}
+
+
+.button:hover,
+button:hover{
+
+    filter:
+    brightness(1.15);
+
+}
+
+
+
+/* Click Effect */
+
+
+.button:active,
+button:active{
+
+    transform:
+    scale(.95);
+
+}
+
+
+
+/* Cards Better Glass */
+
+
+.card,
+.server-card,
+.profile-container,
+.dashboard-card{
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.04)
+    );
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+}
+
+
+
+/* Image Optimization */
+
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+
+.avatar{
 
     width:150px;
 
     height:150px;
 
-    border-radius:50%;
-
     object-fit:cover;
 
-    border:5px solid #00e5ff;
+    border-radius:50%;
+
+    loading:lazy;
 
 }
 
 
 
-.avatar-area label {
-
-    display:block;
-
-    margin-top:15px;
-
-    cursor:pointer;
-
-    color:#00e5ff;
-
-}
+/* Links */
 
 
+a{
 
-.rank {
-
-    margin:15px;
-
-    padding:10px;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-    90deg,
-    #ff4da6,
-    #6b2cff
-    );
+    transition:
+    color .3s ease,
+    transform .3s ease;
 
 }
 
 
 
-.info {
+/* Loading Animation */
 
-    text-align:left;
 
-    color:#ddd;
+.loading{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+
+    5px solid rgba(255,255,255,.2);
+
+    border-top-color:#00bfff;
+
+    animation:
+    spin 1s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:
+        rotate(360deg);
+
+    }
 
 }
 
 
 
-.edit-button {
-
-    margin-top:20px;
-
-    padding:12px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#00e5ff;
-
-    cursor:pointer;
-
-}
-
-/* Admin Panel */
+/* Status Badge */
 
 
-.admin-page {
+.badge{
 
-    padding:40px;
+    display:inline-block;
 
-    display:flex;
+    padding:
+    7px 18px;
 
-    justify-content:center;
+    border-radius:
+    50px;
 
-    gap:25px;
+    font-size:14px;
 
-    flex-wrap:wrap;
+    font-weight:600;
 
 }
 
 
-
-.admin-card {
-
-    background:#181818;
-
-    width:320px;
-
-    padding:25px;
-
-    border-radius:20px;
-
-}
-
-
-
-.member {
-
-    background:#222;
-
-    padding:15px;
-
-    margin:15px 0;
-
-    border-radius:15px;
-
-}
-
-
-
-.admin-card button {
-
-    padding:10px 20px;
-
-    border:none;
-
-    border-radius:20px;
-
-    background:#00e5ff;
-
-    cursor:pointer;
-
-}
-
-/* =========================
-   Quacks Community Theme
-   Global Design
-========================= */
-
-
-header {
+.badge-green{
 
     background:
-    linear-gradient(
-        90deg,
-        #21005d,
-        #0057ff
-    );
+    rgba(0,255,120,.15);
 
-    border-bottom:1px solid rgba(255,255,255,.15);
+    color:#00ff88;
+
+}
+
+
+.badge-purple{
+
+    background:
+    rgba(107,44,255,.2);
+
+    color:#b78cff;
 
 }
 
 
 
-header h1 {
-
-    color:white;
-
-}
+/* Notification */
 
 
+.toast{
 
-nav a {
+    position:fixed;
 
-    color:white;
+    right:20px;
 
-    transition:.3s;
+    bottom:20px;
 
-}
+    padding:18px 25px;
 
+    border-radius:20px;
 
+    background:
+    rgba(20,30,60,.85);
 
-nav a:hover {
+    backdrop-filter:
+    blur(15px);
 
-    color:#00e5ff;
-
-}
-
-
-
-
-/* Main sections */
-
-
-.games,
-.staff {
-
-    background:#f5f7ff;
-
-    color:#222;
-
-}
-
-
-
-.games h2,
-.staff h2 {
-
-    color:#35106f;
-
-}
-
-
-
-
-
-.card {
-
-    background:white;
-
-    color:#222;
-
-    border-radius:25px;
+    border:
+    1px solid rgba(255,255,255,.1);
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.12);
+    var(--shadow);
 
-    transition:.3s;
+    animation:
+    slideUp .4s ease;
+
+}
+
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
 
 }
 
 
 
-.card:hover {
+/* GitHub Pages + Railway Safe Layout */
 
-    transform:translateY(-10px);
 
-    box-shadow:
-    0 15px 40px rgba(0,87,255,.25);
+main,
+section{
+
+    width:100%;
+
+}
+
+
+.page{
+
+    min-height:100vh;
 
 }
 
 
 
-
-
-/* Buttons */
+/* Prevent layout jumping */
 
 
 button,
-.button {
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #ff4da6,
-        #6b2cff
-    );
-
-    color:white;
-
-    border:none;
-
-    border-radius:50px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-/* Profile Upgrade */
-
-
-.profile-page {
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #21005d,
-        #0057ff,
-        #00e5ff
-    );
-
-}
-
-
-
-.profile-card {
-
-    background:white;
-
-    color:#222;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.25);
-
-}
-
-
-
-.rank {
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #ff4da6,
-        #6b2cff
-    );
-
-    color:white;
-
-}
-
-
-
-
-
-/* Admin Panel */
-
-
-.admin-page {
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #21005d,
-        #0057ff,
-        #00e5ff
-    );
-
-    min-height:80vh;
-
-}
-
-
-
-.admin-card {
-
-    background:white;
-
-    color:#222;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.2);
-
-}
-
-
-
-.member {
-
-    background:#f1edff;
-
-}
-
-
-
-.admin-card button {
-
-    background:
-
-    linear-gradient(
-        90deg,
-        #ff4da6,
-        #6b2cff
-    );
-
-    color:white;
-
-}
-
-:root{
-  --purple-dark:#21005d;
-  --electric-blue:#0057ff;
-  --cyan:#00e5ff;
-  --accent:#6b2cff;
-  --bg-gradient: linear-gradient(135deg,var(--purple-dark),var(--electric-blue),var(--cyan));
-  --btn-gradient: linear-gradient(90deg,var(--accent),var(--electric-blue),var(--cyan));
-  --card-bg: rgba(255,255,255,0.95);
-  --radius: 25px;
-  --shadow: 0 15px 40px rgba(0,0,0,.25);
-  --space-lg: 3.75rem; /* 60px */
-  --space-md: 1.25rem; /* 20px */
-  --space-sm: .75rem;  /* 12px */
-  --text-color:#35106f;
-  --muted:#333;
-  --max-card-width:420px;
-  --transition: 200ms cubic-bezier(.16,.84,.33,1);
-  --focus-ring: 3px solid rgba(0,123,255,.18);
-  box-sizing: border-box;
-}
-
-/* Global box-sizing */
-*,*::before,*::after{box-sizing:inherit}
-
-/* Section: maintains the same identity but is more responsive */
-.server-info{
-  padding: clamp(2rem, 4vw, var(--space-lg)) var(--space-md);
-  text-align:center;
-  background:var(--bg-gradient);
-  background-size: 200% 200%;
-  color: #fff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  /* keep layout intact while improving vertical centering on tall viewports */
-  display:block;
-  position:relative;
-  overflow:hidden;
-  isolation:isolate;
-  padding-top: calc(var(--space-lg) + 1rem);
-  padding-bottom: calc(var(--space-lg) + 1rem);
-}
-
-/* Heading: responsive sizing without changing position */
-.server-info h2{
-  color: #fff;
-  font-size: clamp(1.5rem, 1.1rem + 2vw, 2.2rem); /* responsive */
-  margin: 0 0 1.5rem 0;
-  line-height:1.05;
-  font-weight:700;
-  text-shadow: 0 4px 18px rgba(0,0,0,.35);
-}
-
-/* Card: preserve shape & placement but improve responsiveness and accessibility */
+.button,
+.card,
 .server-card{
-  background:var(--card-bg);
-  max-width: min(var(--max-card-width), 95%);
-  margin: 1.5rem auto;
-  padding: clamp(1rem, 2vw, 2rem);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(0,0,0,0.04);
+
+    will-change:transform;
+
 }
 
-/* Subhead & text */
-.server-card h3{
-  color:var(--text-color);
-  font-size: clamp(1.05rem, .9rem + 1vw, 1.5rem);
-  margin: 0 0 .5rem 0;
-  font-weight:700;
+
+
+/* Accessibility */
+
+
+:focus-visible{
+
+    outline:
+
+    3px solid #00bfff;
+
+    outline-offset:4px;
+
 }
 
-.server-card p{
-  color:var(--muted);
-  font-size: clamp(.95rem, .8rem + .5vw, 1.125rem);
-  margin: 0 0 .75rem 0;
-  line-height:1.45;
+
+
+/* Reduced Motion */
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+*{
+
+    animation-duration:
+    .01ms !important;
+
+    transition-duration:
+    .01ms !important;
+
 }
 
-/* Shared button styles for both <button> and .button link */
-.server-card button,
-.server-card .button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.5rem;
-  margin: .5rem .5rem;
-  padding: .65rem 1.6rem;
-  border: none;
-  border-radius: 999px; /* pill */
-  color: #fff;
-  background: var(--btn-gradient);
-  cursor: pointer;
-  text-decoration:none;
-  font-weight:600;
-  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
-  box-shadow: 0 8px 18px rgba(107,44,255,.12);
-  -webkit-tap-highlight-color: transparent;
 }
 
-/* Hover / active / focus states (accessible) */
-.server-card button:hover,
-.server-card .button:hover{
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(16,24,40,.18);
-  filter: saturate(1.05);
+
+
+/* Very Small Screens */
+
+
+@media(max-width:480px){
+
+
+.hero h2{
+
+    font-size:32px;
+
 }
 
-.server-card button:active,
-.server-card .button:active{
-  transform: translateY(0) scale(.995);
-  box-shadow: 0 10px 24px rgba(16,24,40,.12);
+
+.button,
+button{
+
+    width:100%;
+
 }
 
-/* Visible focus for keyboard users */
-.server-card button:focus-visible,
-.server-card .button:focus-visible{
-  outline: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,.12), var(--focus-ring);
-  border-radius: 999px;
+
+.options{
+
+    flex-direction:column;
+
+    gap:15px;
+
 }
 
-/* Preserve original .server-card button selector so existing JS still works */
-.server-card button{ /* keeps specificity for any inline styles or scripts */
-  /* nothing extra here, rules above already apply */
-}
 
-/* Small utilities */
-.server-card .button{ /* keep link variant appearance identical to buttons */
-  display:inline-block;
-}
-
-/* Hover transform reduced for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .server-card button,
-  .server-card .button{
-    transition: none;
-  }
-  .server-card button:hover,
-  .server-card .button:hover{
-    transform: none;
-    box-shadow: 0 8px 18px rgba(0,0,0,.12);
-  }
-}
-
-/* Responsive tweaks for narrow screens */
-@media (max-width: 480px){
-  .server-info{
-    padding: 2rem 1rem;
-  }
-  .server-card{
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 18px;
-  }
-  .server-card h3{ font-size: 1.05rem; }
-  .server-card p{ font-size: .98rem; }
-  .server-card button,
-  .server-card .button{
-    padding: .55rem 1.1rem;
-    margin: .4rem .3rem;
-    font-size: .95rem;
-  }
-}
-
-/* Subtle floating animation on large screens to make section feel dynamic (non-essential) */
-@media (min-width: 1024px){
-  .server-info{
-    animation: backgroundShift 12s ease-in-out infinite;
-  }
-  @keyframes backgroundShift{
-    0%{ background-position: 0% 50%; }
-    50%{ background-position: 100% 50%; }
-    100%{ background-position: 0% 50%; }
-  }
 }
